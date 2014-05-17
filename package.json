@@ -1,16 +1,8 @@
 {
-  "name": "sample_server",
+  "name": "CompSoc-Website",
   "version": "0.0.1",
-  "description": "sample server for openshift using nodejs, expressjs, requirejs, sass and angularjs",
+  "description": "NUI Galway Computer Society Website 2014",
   "keywords": [
-    "OpenShift",
-    "Node.js",
-    "application",
-    "expressjs",
-    "requirejs",
-    "sass",
-    "angularjs",
-    "openshift"
   ],
   "author": {
     "name": "LcLk",
@@ -28,9 +20,7 @@
   },
 
   "dependencies": {
-    "express": "~3.4.4",
-    "debug": ">= 0.7",
-    "mongoose": ">= 3.8"
+    "express": "3.4.4"
   },
   "devDependencies": {},
   "bundleDependencies": [],

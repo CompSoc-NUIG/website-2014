@@ -2,19 +2,17 @@
 /*
 NodeJS server application for OpenShift using express
 */
-var express = require('express');
-var app = express();
-var debug = require('debug')('http');
-var http = require('http');
-var path = require('path');
-var router = require('./routes');
+var express = require('express'),
+    app = express(),
+    http = require('http'),
+    path = require('path'),
+    router = require('./routes');
 
 /*
 Environment Variables
 */
 
-//running on OpenShift?
-if (process.env.hasOwnProperty("OPENSHIFT_NODEJS_IP")) {
+if (process.env.hasOwnProperty("OPENSHIFT_NODEJS_IP")) { //running on OpenShift?
 	app.ipaddress = process.env.OPENSHIFT_NODEJS_IP;
 	app.port      = process.env.OPENSHIFT_NODEJS_PORT;
 } else {
@@ -47,7 +45,6 @@ app.use(express.methodOverride());
 
 //allows defining of routes and routing variables
 app.use(app.router);
-
 
 /*
 * Define routes
