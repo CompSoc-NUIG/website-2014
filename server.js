@@ -4,6 +4,7 @@ NodeJS server application for OpenShift using express
 */
 var express = require('express'),
     app = express(),
+    debug = require('debug')('http'),
     http = require('http'),
     path = require('path'),
     router = require('./routes');
@@ -46,6 +47,11 @@ app.use(express.methodOverride());
 //allows defining of routes and routing variables
 app.use(app.router);
 
+
+app.use(function(req,res,next){
+    debug(req.method + ' ' + req.url);
+    next();
+});
 /*
 * Define routes
 */
@@ -58,6 +64,7 @@ app.get('/api/:controller/:method', router.api);
 app.put('/api/:controller/:method', router.api);
 app.post('/api/:controller/:method', router.api);
 app.delete('/api/:controller/:method', router.api);
+app.get('*', router.homepage);
 
 
 /*

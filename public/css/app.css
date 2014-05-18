@@ -1,0 +1,82 @@
+@font-face {
+    font-family: bimini;
+    src: url('fonts/bimini.woff') format('woff'), /* Modern Browsers */
+         url('fonts/bimini.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+*{
+    /*
+        This is a catch-all style which forces the quirks-mode border-box style on all elements.
+        When you give an element a width, padding and border are placed WITHIN this width WITHOUT expanding it.
+    */
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box;    
+	box-sizing: border-box;             
+}
+
+body {
+    padding:50px 0 0 0;
+    margin:0px;
+}
+
+/* Navigation Header Bar START*/
+
+nav {
+    font-family: bimini;
+    color:white;
+    position: fixed;
+    top:0px;
+    height: 50px;
+    width:100%;
+    padding: 2px 15px;
+    background-color: rgba(140,140,140,0.9);
+}
+nav a.logo {
+    color:white;
+    font-size: 32px;
+    float:left;
+    clear:left;
+    -moz-user-select:none;
+    -webkit-user-select:none;
+    text-decoration: none;
+    cursor: pointer;
+    text-shadow: 0 0 4px rgba(0,0,0,0.8);
+    transition:all .3s;
+    -moz-transition:all .3s;
+    -webkit-transition:all .3s;
+}
+nav a.logo:hover {
+    text-shadow: 0 0 7px rgba(0,0,0,0.9);
+}
+nav .logo span:first-child {
+    vertical-align: 4px;
+}
+nav .logo span:last-child {
+    vertical-align: -4px;
+}
+nav .links{
+    float:right;
+    padding:2px 10px;
+    -moz-user-select:none;
+    -webkit-user-select:none;
+}
+nav .links a {
+    font-size: 24px;
+    color:#EEEEEE;
+    display: inline-block;
+    padding:15px 15px 15px 0px;
+    text-decoration: none;
+    cursor: pointer;
+    text-shadow: 0 0 2px rgba(0,0,0,0.8);
+    transition:all .3s;
+    -moz-transition:all .3s;
+    -webkit-transition:all .3s;
+}
+nav .links a:hover {
+    color:white;
+    text-decoration: none;
+    cursor: pointer;
+    text-shadow: 0 0 4px rgba(0,0,0,0.8);
+}
+
+/* Navigation Header Bar END*/

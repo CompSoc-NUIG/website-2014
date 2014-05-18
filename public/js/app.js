@@ -1,5 +1,5 @@
 //Declare Angular app
-app = angular.module("app", [
+app = angular.module("CompSoc", [
     'ngRoute',
     'ngAnimate'
 ]);
@@ -8,45 +8,42 @@ app = angular.module("app", [
 app.config( function($routeProvider, $locationProvider) {
     $routeProvider.
         when('/home', {
-            templateUrl: '/views/partials/home.html',
+            templateUrl: '/partials/home.html',
             title: "Home"
         }).
         when('/blog', {
-            templateUrl: '/views/partials/blog.html',
+            templateUrl: '/partials/blog.html',
             title: "Blog"
         }).
         when('/blog/:post',{
           templateUrl: function(rp){
-            return '/views/partials/blog/'+rp.post+'.html'
+            return '/partials/blog/'+rp.post+'.html'
           },
           title: "Blog"
         }).
         when('/wiki', {
-            templateUrl: '/views/partials/wiki.html',
+            templateUrl: '/partials/wiki.html',
             title: "Wiki"
         }).
         when('/wiki/:page',{
           templateUrl: function(rp){
-            return '/views/partials/wiki/'+rp.page+'.html'
+            return '/partials/wiki/'+rp.page+'.html'
           },
           title: "Blog"
         }).
         when('/users', {
-            templateUrl: '/views/partials/wiki.html',
+            templateUrl: '/partials/wiki.html',
             title: "Users"
         }).
         when('/users/:user',{
           templateUrl: function(rp){
-            return '/views/partials/users/'+rp.user+'.html'
+            return '/partials/users/'+rp.user+'.html'
           },
           title: "Users"
         }).        
         when('/hlms', {
-            templateUrl: '/views/partials/hlms.html',
+            templateUrl: '/partials/hlms.html',
             title: "HLMS"
-        }).
-        when('/', {
-            redirectTo: '/home'
         }).
         otherwise({ //aka default route, this will prevent 404s
             redirectTo: '/home'
@@ -57,7 +54,7 @@ app.config( function($routeProvider, $locationProvider) {
 });
 
 //Here we can define some global ($rootScope) variables shared between all controllers
-app.run(function($routeScope){
+app.run(function($rootScope){
     
 });
 
