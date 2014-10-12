@@ -35,10 +35,10 @@ else {
 
 // Gith package for automatically updating the website from the git repo
 gith({
-    repo: 'compsoc-nuig/website-2014',
+    repo: 'CompSoc-NUIG/website-2014',
     branch: 'production'
   }).on( 'all', function( payload ) {
-    console.log( 'Post-receive happened!' );
+    console.log( '\n\n\nGITH:Post-receive happened!\n\n\n' );
   });
 
 
