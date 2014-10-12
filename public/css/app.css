@@ -1,7 +1,7 @@
 @font-face {
     font-family: bimini;
-    src: url('../fonts/bimini.woff') format('woff'), /* Modern Browsers */
-         url('../fonts/bimini.ttf')  format('truetype'); /* Safari, Android, iOS */
+    src: url('/fonts/bimini.woff') format('woff'), /* Modern Browsers */
+         url('/fonts/bimini.ttf')  format('truetype'); /* Safari, Android, iOS */
 }
 
 *{
