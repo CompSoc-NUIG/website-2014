@@ -25,7 +25,7 @@
     "method-override": "^2.2.0",
     "newrelic": "1.5.0",
     "serve-static": "^1.6.3",
-    "forever": "^0.10"
+    "forever": "^0.11.1"
   },
   "devDependencies": {},
   "bundleDependencies": [],
