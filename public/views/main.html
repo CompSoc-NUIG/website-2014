@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html id="ng-app" ng-app="CompSoc">
+
+
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
+    <link rel="stylesheet" type="text/css" href="/css/semantic.css">
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/js/lib/angular/angular.js"></script>
+    <script type="text/javascript" src="/js/lib/angular/angular-route.js"></script>
+    <script type="text/javascript" src="/js/lib/angular/angular-animate.js"></script>
+    <script type="text/javascript" src="/js/lib/semantic.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+    <title>CompSoc</title>
+    
+    <body>
+
+
+
+        <nav ng-controller="NavCtrl">
+
+            <div class="ui sidebar left" side-bar>
+                
+            </div>
+
+            <a class="logo" title="NUIG" href="http://www.nuigalway.ie" target="_blank">  
+            </a>
+            <a class="text-logo" title="CompSoc Homepage" href="/" target="_self">
+                <span>Comp</span>
+                <span>Soc</span>
+            </a>
+
+            <div class="ui secondary  menu">
+                <a class="item" ng-class="{active: option.active}" ng-href="/{{option.url}}" ng-repeat="option in navMenu">{{option.text}}</a>
+            </div>
+
+        </nav>
+ 
+        <div class="content" ng-view>
+        
+        </div>
+    </body>
+</html>
