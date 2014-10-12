@@ -24,7 +24,8 @@
     "express": ">= 4.0.0",
     "method-override": "^2.2.0",
     "newrelic": "1.5.0",
-    "serve-static": "^1.6.3"
+    "serve-static": "^1.6.3",
+    "gith": "^1.0.4"
   },
   "devDependencies": {},
   "bundleDependencies": [],

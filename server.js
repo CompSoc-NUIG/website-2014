@@ -11,7 +11,8 @@ var express = require('express'),
     serveStatic = require('serve-static'),
     methodOverride = require('method-override'),
     app = express(),
-    router = express.Router();
+    router = express.Router(),
+    gith = require('gith').create( 9123 );
 
 
 /*
@@ -31,6 +32,15 @@ else {
 	app.ipaddress = "0.0.0.0";
 	app.port = "3000";
 }
+
+// Gith package for automatically updating the website from the git repo
+gith({
+    repo: 'compsoc-nuig/website-2014',
+    branch: 'production'
+  }).on( 'all', function( payload ) {
+    console.log( 'Post-receive happened!' );
+  });
+
 
 
 //send static data compressed with gzip.
