@@ -46,7 +46,7 @@ app.config( function($routeProvider, $locationProvider) {
             title: "HLMS"
         }).
         otherwise({ //aka default route, this will prevent 404s
-            redirectTo: '/'
+            redirectTo: '/home'
     });
     
     
