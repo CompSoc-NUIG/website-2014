@@ -1,7 +1,7 @@
 @font-face {
     font-family: bimini;
-    src: url('fonts/bimini.woff') format('woff'), /* Modern Browsers */
-         url('fonts/bimini.ttf')  format('truetype'); /* Safari, Android, iOS */
+    src: url('../fonts/bimini.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/bimini.ttf')  format('truetype'); /* Safari, Android, iOS */
 }
 
 *{
@@ -14,69 +14,73 @@
 	box-sizing: border-box;             
 }
 
+a, a:hover, a:focus, a:active {
+    /*
+        Prevent a dotted border from outlining links when pressed
+    */
+    outline:0;
+    text-decoration: none;
+}
+
+
 body {
     padding:50px 0 0 0;
     margin:0px;
 }
 
-/* Navigation Header Bar START*/
+nav {
+    user-select:none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+}
 
+nav a{
+    float: left;
+    color:white;
+    cursor: pointer;
+}
+
+
+/* Navigation Header Bar START*/
+nav .logo {
+    background-image: url('../img/nuig.png');
+    width: 50px;
+    padding: 0px 25px;
+    height: 50px;
+}
+nav .text-logo {
+    text-shadow:1px 1px rgba(0,0,0,0.5);
+    color:white;
+    font-size:36px;
+}
+nav .text-logo span:last-child {
+    vertical-align: -8px;
+    margin-left: -6px;
+}
 nav {
     font-family: bimini;
     color:white;
     position: fixed;
     top:0px;
-    height: 50px;
-    width:100%;
-    padding: 2px 15px;
-    background-color: rgba(140,140,140,0.9);
-}
-nav a.logo {
-    color:white;
-    font-size: 32px;
-    float:left;
-    clear:left;
-    -moz-user-select:none;
-    -webkit-user-select:none;
-    text-decoration: none;
-    cursor: pointer;
-    text-shadow: 0 0 4px rgba(0,0,0,0.8);
-    transition:all .3s;
-    -moz-transition:all .3s;
-    -webkit-transition:all .3s;
-}
-nav a.logo:hover {
-    text-shadow: 0 0 7px rgba(0,0,0,0.9);
-}
-nav .logo span:first-child {
-    vertical-align: 4px;
-}
-nav .logo span:last-child {
-    vertical-align: -4px;
-}
-nav .links{
-    float:right;
-    padding:2px 10px;
-    -moz-user-select:none;
-    -webkit-user-select:none;
-}
-nav .links a {
-    font-size: 24px;
-    color:#EEEEEE;
-    display: inline-block;
-    padding:15px 15px 15px 0px;
-    text-decoration: none;
-    cursor: pointer;
-    text-shadow: 0 0 2px rgba(0,0,0,0.8);
-    transition:all .3s;
-    -moz-transition:all .3s;
-    -webkit-transition:all .3s;
-}
-nav .links a:hover {
-    color:white;
-    text-decoration: none;
-    cursor: pointer;
-    text-shadow: 0 0 4px rgba(0,0,0,0.8);
+    padding: 3px 0 0 20px;
+    height: 60px;
+    right:0px;
+    left:0px;
+    background-color: rgba(140,140,140,1);
+    z-index:1000;
 }
 
-/* Navigation Header Bar END*/
+body.top.pushed nav {
+    top:50px;
+}
+/*
+    Semantic UI overrides
+*/
+
+nav .ui.secondary.menu .item {
+    color:white;
+}
+
+.ui.sidebar {
+    background-color: red;
+}
