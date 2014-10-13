@@ -59,6 +59,12 @@ app.get('/',function(req,res){
     res.redirect('/views/main.html');
 });
 
+//to force the server to fail
+app.get('/fail',function(req,res){
+    throw "error";
+});
+
+
 // This route needs to be at the last defined to catch any 
 // other undefiend routes and redirect them home
 app.get('*',function(req,res){
