@@ -9,8 +9,7 @@ var child = new (forever.Monitor)('server.js', {
 
 child.on('exit', function () {
   console.log('server.js has exited after 3 restarts');
-  function puts(error, stdout, stderr) { sys.puts(stdout) }
-  exec("scripts/revert.sh", puts);
+  exec("scripts/revert.sh");
 });
 
 child.on('watch:restart', function(info) {
@@ -18,7 +17,8 @@ child.on('watch:restart', function(info) {
 });
 
 child.on('restart', function() {
-    console.error('Forever restarting script for ' + child.times + ' time');
+  console.error('Forever restarting script for ' + child.times + ' time');
+  exec("scripts/revert.sh");
 });
 
 child.start();
