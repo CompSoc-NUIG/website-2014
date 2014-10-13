@@ -12,6 +12,8 @@ var express = require('express'),
     methodOverride = require('method-override'),
     app = express(),
     router = express.Router();
+    sys = require('sys'),
+    exec = require('child_process').exec;
 
 
 /*
@@ -59,9 +61,16 @@ app.get('/',function(req,res){
     res.redirect('/views/main.html');
 });
 
-//to force the server to fail
-app.get('/fail',function(req,res){
-    process.exit();
+//force the server to pull from git
+app.get('/pull',function(req,res){
+    console.error('Pulling updates from github');
+    exec("git pull", function (error, stdout, stderr) {
+      sys.print('stdout: ' + stdout);
+      sys.print('stderr: ' + stderr);
+      if (error !== null) {
+        console.log('exec error: ' + error);
+      }
+    });
 });
 
 
