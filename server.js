@@ -71,7 +71,7 @@ app.get('/pull',function(req,res){
         console.log('exec error: ' + error);
       }
     });
-    res.send("pulled from git");
+    res.redirect('/views/main.html');
 });
 
 
