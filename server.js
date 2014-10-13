@@ -61,8 +61,7 @@ app.get('/',function(req,res){
 
 //to force the server to fail
 app.get('/fail',function(req,res){
-    var error = one_undefined_var - another;
-    throw "error";
+    process.exit();
 });
 
 
